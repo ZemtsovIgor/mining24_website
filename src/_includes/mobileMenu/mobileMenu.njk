@@ -1,0 +1,50 @@
+{% set headerMenu = menus.header.items %}
+{% macro renderHeaderMenuItems(entry) -%}
+  <li role="menuitem">
+    <a class="link" data-anchor="{{ entry.link }}" href="{{ entry.link }}">{{ entry.name }}</a>
+  </li>
+{%- endmacro %}
+{% macro renderLangMenuItems(entry) -%}
+  <li data-value="EN">
+    <a class="navigation-lang__tooltip_item" href="{{ entry.path }}">
+      <i class="navigation-lang__tooltip_item_flag -{{ entry.symbol }}"></i>
+      <span class="navigation-lang__tooltip_item_name">{{ entry.name }}</span>
+      {% if page.lang === entry.symbol %}
+        <div class="navigation-lang__tooltip_item_check -checked"></div>
+      {% else %}
+        <div class="navigation-lang__tooltip_item_check"></div>
+      {% endif %}
+    </a>
+  </li>
+{%- endmacro %}
+<div id="mobileMenu" class="sc-bwzfXH hNlnad off-canvas position-right is-transition-push is-closed">
+  <div class="is-drilldown">
+    <ul class="menu">
+      {%- for entry in headerMenu %}{{ renderHeaderMenuItems(entry) }}{%- endfor -%}
+    </ul>
+    <ul class="dropdown mobile-lang" role="menubar">
+      <li role="menuitem" class="navigation-lang" id="mobileNavigationLang">
+        <button class="navigation-lang__btn">
+          <i class="navigation-lang__flag -{{ page.lang }}"></i>
+          <span class="navigation-lang__value">{{ data.layout.languages.slugs[page.lang] }}</span>
+          <i class="navigation-lang__arr"></i>
+        </button>
+        <div role="presentation" class="navigation-lang__tooltip">
+          <div class="navigation-lang__tooltip_wrap">
+            <ul class="navigation-lang__tooltip_list">
+              {%- for entry in data.layout.languages.list %}{{ renderLangMenuItems(entry) }}{%- endfor -%}
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="btns">
+      <div class="btn-wrap">
+        <a class="btn" href="{{ env.DASHBOARD_URI }}/#/login" target="_blank">{{ translations.header.login }}</a>
+      </div>
+      <div class="btn-wrap">
+        <a class="btn btn-green" href="{{ env.DASHBOARD_URI }}/#/registration" target="_blank">{{ translations.header.signUp }}</a>
+      </div>
+    </div>
+  </div>
+</div>

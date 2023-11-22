@@ -1,0 +1,27 @@
+{
+  "name": "eleventy-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "bootstrap": "^5.3",
+    "coffeescript": "^2.7.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "escape-string-regexp": "^5.0.0",
+    "favicons": "^7.1.4",
+    "fs": "^0.0.1-security",
+    "node-retrieve-globals": "^2.0.4",
+    "path": "^0.12.7",
+    "sass": "^1.69.5",
+    "terser": "^5.24.0",
+    "toml": "^3.0.0"
+  }
+}

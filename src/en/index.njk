@@ -1,0 +1,644 @@
+---
+layout: index
+data:
+  page:
+    title: "EN TEST TITLE"
+    description: "EN TEST DESCRIPTION"
+    keywords: "EN TEST KEYWORDS"
+    socialImage: "/assets/images/logo.svg"
+---
+
+{% macro renderSocialItems(entry) -%}
+  <div class="social-item">
+    <a class="social-item__link" target="_blank" href="{{ entry.link }}">
+      <i class="social-item__icon -{{ entry.slug }}"></i>
+    </a>
+  </div>
+{%- endmacro %}
+
+<main class="main_layout">
+  <!-- start main -->
+  <section class="mainSlide main-slide ">
+    <div class="grid-container">
+      <div class="cell grid-x align-middle">
+        <div class="cell small-12 large-6 left-side">
+          <h1 class="h1">Fast and easy <span class="text-green">Crypto mining</span> contracts for everyone</h1>
+          <div class="btns">
+            <div class="btn-wrap">
+              <a class="btn btn-green" href="#" target="_blank">Buy contract</a>
+            </div>
+          </div>
+          <div class="text-wrap">
+            <p class="text">Start from $100</p>
+          </div>
+          <div class="show-for-small social">
+            {%- for entry in data.layout.socials %}{{ renderSocialItems(entry) }}{%- endfor -%}
+          </div>
+        </div>
+        <div class="cell small-12 large-6 xlarge-6 right-side">
+          <div class="animation-wrap">
+            <img class="animation" srcset="/assets/images/tree.png, /assets/images/tree@2x.png 2x" src="/assets/images/tree.png" alt="tree" />
+          </div>
+          <div class="social hide-for-small -vertical">
+            {%- for entry in data.layout.socials %}{{ renderSocialItems(entry) }}{%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end main -->
+
+  <!-- start chooseContract -->
+  <section class="chooseContract row choose-your-contract" id="contract">
+    <div class="grid-container">
+      <div class="cell small-12 medium-12">
+        <h2 class="h2">Choose your contract</h2>
+      </div>
+      <div class="grid-x choose-your-contract__container grid-margin-x">
+        <div class="cell grid-x small-6 xlarge-3 media-card -purple">
+          <div class="cell media-card__content">
+            <h3 class="h3">Simple</h3>
+            <ul class="list">
+              <li class="list__item">3.6 Th Power</li>
+              <li class="list__item">24 mo</li>
+              <li class="list__item">50% Estimated ROI</li>
+            </ul>
+            <span class="price">$100</span>
+            <div class="btn-wrap"><a class="btn" href="#">Buy contract</a></div>
+          </div>
+        </div>
+        <div class="cell grid-x small-6 xlarge-3 media-card -green">
+          <div class="cell media-card__content">
+            <h3 class="h3">Medium</h3>
+            <ul class="list">
+              <li class="list__item">18 Th Power</li>
+              <li class="list__item">24 mo</li>
+              <li class="list__item">75% Estimated ROI</li>
+            </ul>
+            <span class="price">$500</span>
+            <div class="btn-wrap"><a class="btn" href="#">Buy contract</a></div>
+          </div>
+        </div>
+        <div class="cell grid-x small-6 xlarge-3 media-card -pink">
+          <div class="cell media-card__content">
+            <h3 class="h3">Profi</h3>
+            <ul class="list">
+              <li class="list__item">33 Th Power</li>
+              <li class="list__item">24 mo</li>
+              <li class="list__item">100% Estimated ROI</li>
+            </ul>
+            <span class="price">$1000</span>
+            <div class="btn-wrap"><a class="btn" href="#">Buy contract</a></div>
+          </div>
+        </div>
+        <div class="cell grid-x small-6 xlarge-3 media-card -blue">
+          <div class="cell media-card__content">
+            <h3 class="h3">Expert</h3>
+            <ul class="list">
+              <li class="list__item">110 Th Power</li>
+              <li class="list__item">24 mo</li>
+              <li class="list__item">200% Estimated ROI</li>
+            </ul>
+            <span class="price">$5000</span>
+            <div class="btn-wrap"><a class="btn" href="#">Buy contract</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end chooseContract -->
+
+  <!-- start calculator -->
+  <section class="row calculator" id="calculator">
+    <div class="grid-container">
+      <div class="calculator-wrap grid-x">
+        <div class="cell small-12 medium-12">
+          <div class="titles">
+            <h2 class="h2">BTC mining contract calculator</h2>
+            <p class="text">With our calculator you can calculate the potential profit of mining BTC</p>
+          </div>
+        </div>
+        <div class="cell small-12 medium-12 xlarge-6">
+          <div class="sliders">
+            <div class="sliders__item">
+              <div class="sliders__item-title_wrap">
+                <span class="sliders__item-title">Power</span>
+              </div>
+              <div class="sliders__item-slider_wrap">
+                <input class="sliders__item-slider" type="range" min="0" max="55" step="0.1" id="power_rangeSlider"  />
+              </div>
+            </div>
+            <div class="sliders__item">
+              <div class="sliders__item-title_wrap">
+                <span class="sliders__item-title">Contract duration (month)</span>
+              </div>
+              <div class="sliders__item-slider_wrap">
+                <input type="range" class="sliders__item-slider" min="0" max="24" step="1" id="duration_rangeSlider" />
+              </div>
+            </div>
+            <div class="sliders__item">
+              <div class="sliders__item-title_wrap">
+                <span class="sliders__item-title">BTC Forecast</span>
+              </div>
+              <div class="sliders__item-slider_wrap">
+                <input type="range" class="sliders__item-slider" min="0" max="160000" step="100" id="forecast_rangeSlider" />
+              </div>
+            </div>
+          </div>
+          <div class="compare">
+            <div class="compare__wrap">
+              <div class="compare__item-wrap">
+                <div class="compare__item-line">
+                  <span class="compare__item">Monthly mining</span>
+                </div>
+                <div class="compare__item-line">
+                  <span class="compare__item">Total mining</span>
+                </div>
+                <div class="compare__item-line">
+                  <span class="compare__item">Annually mining</span>
+                </div>
+              </div>
+              <div class="compare__item-wrap">
+                <div class="compare__item-line">
+                  <span class="compare__title" id="monthly_mining">0 BTC</span>
+                </div>
+                <div class="compare__item-line">
+                  <span class="compare__title" id="annually_mining">0 BTC</span>
+                </div>
+                <div class="compare__item-line">
+                  <span class="compare__title" id="total_mining">0 BTC</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cell small-12 medium-12 xlarge-6">
+          <div class="total">
+            <div class="total__bonus-wrap">
+              <span class="total__bonus" id="ths_power">0 TH/s</span>
+              <span class="total__bonus-balloon -green" id="ths_bonus">+0 TH/s BONUS</span>
+            </div>
+            <div class="total__profit-wrap">
+              <div class="total__profit-items">
+                <div class="total__profit-item">
+                  <i class="total__profit-circle -green"></i>
+                  <span class="total__profit" id="invested">Invested: 0 USD</span>
+                </div>
+                <div class="total__profit-item">
+                  <i class="total__profit-circle -purple"></i>
+                  <span class="total__profit" id="income">Total Profit: 0 USD</span>
+                </div>
+              </div>
+              <div class="total__profit-rating_wrap">
+                <div class="total__profit-rating">
+                  <span class="total__profit-rating_percent" id="contract_profit_percent">0%</span>
+                </div>
+              </div>
+            </div>
+            <div class="total__text-wrap">
+              <span class="total__text" id="contract_profit">Contract Profit: 0%</span>
+            </div>
+            <div class="total__text-wrap">
+              <span class="total__text" id="total_usd">Total: 0 USD (0 BTC)</span>
+            </div>
+            <div class="total__btn-wrap">
+              <a class="btn btn-green total__btn" href="#" target="_blank">Buy contract</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end calculator -->
+
+  <!-- start about -->
+  <section class="why-people-choose-us" id="about_us">
+    <div class="grid-container">
+      <div class="cell small-12 medium-12">
+        <h2 class="h2">Why people choose us?</h2>
+      </div>
+      <div class="grid-x">
+        <div class="cell small-12 medium-12 xlarge-7">
+          <div class="imageCarouselContainer">
+            <div class="carousel">
+              <div class="swiper slides-list imageCarousel">
+                <div class="swiper-wrapper slides-track">
+                  <div class="slide swiper-slide">
+                    <img class="carousel-image" src="/assets/images/slider/1.jpg" alt="alt text" />
+                  </div>
+                  <div class="slide swiper-slide">
+                    <img class="carousel-image" src="/assets/images/slider/2.jpg" alt="alt text" />
+                  </div>
+                  <div class="slide swiper-slide">
+                    <img class="carousel-image" src="/assets/images/slider/3.jpg" alt="alt text" />
+                  </div>
+                  <div class="slide swiper-slide">
+                    <img class="carousel-image" src="/assets/images/slider/4.jpg" alt="alt text" />
+                  </div>
+                  <div class="slide swiper-slide">
+                    <img class="carousel-image" src="/assets/images/slider/5.jpg" alt="alt text" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper carousel-thumbs thumbsCarousel">
+                <div class="swiper-wrapper">
+                  <div class="carousel-thumb__wrap swiper-slide">
+                    <img class="carousel-thumb" src="/assets/images/slider/1.jpg" alt="alt text" />
+                  </div>
+                  <div class="carousel-thumb__wrap swiper-slide">
+                    <img class="carousel-thumb" src="/assets/images/slider/2.jpg" alt="alt text" />
+                  </div>
+                  <div class="carousel-thumb__wrap swiper-slide">
+                    <img class="carousel-thumb" src="/assets/images/slider/3.jpg" alt="alt text" />
+                  </div>
+                  <div class="carousel-thumb__wrap swiper-slide">
+                    <img class="carousel-thumb" src="/assets/images/slider/4.jpg" alt="alt text" />
+                  </div>
+                  <div class="carousel-thumb__wrap swiper-slide">
+                    <img class="carousel-thumb" src="/assets/images/slider/5.jpg" alt="alt text" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cell small-12 medium-12 xlarge-5">
+          <div class="miningListComponent miningList">
+            <div class="cell miningList__content">
+              <ul class="miningList__content-list">
+                <li class="miningList__content-item">
+                  <i class="miningList__content-item_icon"></i>
+                  <span class="miningList__content-item_text">Fast START - 5 minutes to START MINING</span>
+                </li>
+                <li class="miningList__content-item">
+                  <i class="miningList__content-item_icon"></i>
+                  <span class="miningList__content-item_text">No need to buy your own equipment</span>
+                </li>
+                <li class="miningList__content-item">
+                  <i class="miningList__content-item_icon"></i>
+                  <span class="miningList__content-item_text">We care of maintenance and operation of the quipment</span>
+                </li>
+                <li class="miningList__content-item">
+                  <i class="miningList__content-item_icon"></i>
+                  <span class="miningList__content-item_text">Transparency at all stages of interaction with the platform</span>
+                </li>
+              </ul>
+              <div class="btn-wrap">
+                <a class="btn btn-green miningList__btn" href="#">Start mining</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about -->
+
+  <!-- start partners -->
+  <section class="partnersContainer row partners">
+    <div class="grid-container">
+      <div class="cell grid-x align-center">
+        <div class="cell small-12 align-center">
+          <div class="partners-container">
+            <div class="partners-wrap">
+              <div class="partners-item">
+                <img class="partners-image" src="/assets/images/partners/antminer.svg" alt="alt text" />
+              </div>
+              <div class="partners-item">
+                <img class="partners-image" src="/assets/images/partners/bitmain.svg" alt="alt text" />
+              </div>
+              <div class="partners-item">
+                <img class="partners-image" src="/assets/images/partners/binance.svg" alt="alt text" />
+              </div>
+              <div class="partners-item">
+                <img class="partners-image" src="/assets/images/partners/emd.svg" alt="alt text" />
+              </div>
+              <div class="partners-item">
+                <img class="partners-image" src="/assets/images/partners/f2pool.svg" alt="alt text" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end partners -->
+
+  <!-- start monitoring -->
+  <section class="monitoringContainer row monitoring">
+    <div class="grid-container">
+      <div class="monitoring-wrap grid-x">
+        <div class="cell small-12 medium-12 xlarge-6">
+          <div class="monitoring-titles">
+            <h2 class="h2">Real-time mining monitoring</h2>
+            <p class="text">Clear and transparent statistics</p>
+          </div>
+          <div class="monitoring-list__wrap">
+            <ul class="monitoring-list">
+              <li class="monitoring-list__item">
+                <i class="monitoring-list__icon"></i>
+                <span class="monitoring-list__text">Watch your income</span>
+              </li>
+              <li class="monitoring-list__item">
+                <i class="monitoring-list__icon"></i>
+                <span class="monitoring-list__text">Request withdrawals</span>
+              </li>
+              <li class="monitoring-list__item">
+                <i class="monitoring-list__icon"></i>
+                <span class="monitoring-list__text">Buy new contracts using your income</span>
+              </li>
+            </ul>
+          </div>
+          <div class="btn-wrap monitoring-btn__wrap">
+            <a class="btn btn-green monitoring-btn" href="#">Start mining</a>
+          </div>
+        </div>
+        <div class="cell small-12 medium-12 xlarge-6">
+          <div class="monitoring-iframe__wrap">
+            <div class="monitoring-iframe"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end monitoring -->
+
+  <!-- start reviews -->
+  <section class="reviewsContainer yCQIE row reviews">
+    <div class="grid-container">
+      <div class="cell small-12 medium-12">
+        <div class="swiper reviews-title">
+          <h2 class="h2">What our customers say</h2>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-carousel__container">
+      <div class="grid-container">
+        <div class="swiper reviews-carousel">
+          <div class="swiper-wrapper">
+            <div class="reviews-carousel__wrap swiper-slide -green">
+              <div class="reviews-carousel__header">
+                <div class="reviews-carousel__photo">
+                  <img src="/assets/images/authors/1.png" class="img" alt="alt text" />
+                </div>
+                <div class="reviews-carousel__info">
+                  <div class="reviews-carousel__info_name">
+                    <p class="name">Pan Ksistof</p>
+                  </div>
+                  <div class="reviews-carousel__info_date">
+                    <p class="date">9/29/2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews-carousel__body">
+                <div class="reviews-carousel__title">
+                  <p class="title">CS is very helpful</p>
+                </div>
+                <div class="reviews-carousel__rating">
+                  <div class="sc-gZMcBi dMdnOw rating-stars">
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 0;"></i></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="reviews-carousel__text">
+                  <p class="text">CS is very helpful when there are difficulties when transferring, problems can be resolved immediately</p>
+                </div>
+              </div>
+            </div>
+            <div class="reviews-carousel__wrap swiper-slide -purple">
+              <div class="reviews-carousel__header">
+                <div class="reviews-carousel__photo">
+                  <img src="/assets/images/authors/2.png" class="img" alt="alt text" />
+                </div>
+                <div class="reviews-carousel__info">
+                  <div class="reviews-carousel__info_name">
+                    <p class="name">Pan Ksistof</p>
+                  </div>
+                  <div class="reviews-carousel__info_date">
+                    <p class="date">9/29/2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews-carousel__body">
+                <div class="reviews-carousel__title"><p class="title">CS is very helpful</p></div>
+                <div class="reviews-carousel__rating">
+                  <div class="sc-gZMcBi dMdnOw rating-stars">
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 0%;"></i></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="reviews-carousel__text">
+                  <p class="text">CS is very helpful when there are difficulties when transferring, problems can be resolved immediately</p>
+                </div>
+              </div>
+            </div>
+            <div class="reviews-carousel__wrap swiper-slide -blue">
+              <div class="reviews-carousel__header">
+                <div class="reviews-carousel__photo">
+                  <img src="/assets/images/authors/3.png" class="img" alt="alt text" />
+                </div>
+                <div class="reviews-carousel__info">
+                  <div class="reviews-carousel__info_name">
+                    <p class="name">Pan Ksistof</p>
+                  </div>
+                  <div class="reviews-carousel__info_date">
+                    <p class="date">9/29/2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews-carousel__body">
+                <div class="reviews-carousel__title">
+                  <p class="title">CS is very helpful</p>
+                </div>
+                <div class="reviews-carousel__rating">
+                  <div class="sc-gZMcBi dMdnOw rating-stars">
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 0%;"></i></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="reviews-carousel__text">
+                  <p class="text">CS is very helpful when there are difficulties when transferring, problems can be resolved immediately</p>
+                </div>
+              </div>
+            </div>
+            <div class="reviews-carousel__wrap swiper-slide -pink">
+              <div class="reviews-carousel__header">
+                <div class="reviews-carousel__photo">
+                  <img src="/assets/images/authors/3.png" class="img" alt="alt text" />
+                </div>
+                <div class="reviews-carousel__info">
+                  <div class="reviews-carousel__info_name">
+                    <p class="name">Pan Ksistof</p>
+                  </div>
+                  <div class="reviews-carousel__info_date">
+                    <p class="date">9/29/2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews-carousel__body">
+                <div class="reviews-carousel__title">
+                  <p class="title">CS is very helpful</p>
+                </div>
+                <div class="reviews-carousel__rating">
+                  <div class="sc-gZMcBi dMdnOw rating-stars">
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 100%;"></i></i>
+                    </div>
+                    <div class="star">
+                      <i class="icon-o"><i class="icon" style="width: 0%;"></i></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="reviews-carousel__text">
+                  <p class="text">CS is very helpful when there are difficulties when transferring, problems can be resolved immediately</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="cell small-12 medium-12">
+        <div class="btn-wrap reviews-btn__wrap">
+          <button class="btn btn-green reviews-btn">Send us your feedback</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end reviews -->
+
+  <!-- start faq -->
+  <section class="faqContainer faq" id="faq">
+    <div class="grid-container">
+      <div class="grid-x faq-container">
+        <div class="grid-x small-12 faq">
+          <div class="cell faq__title">
+            <h2 class="h2">Have any questions?</h2>
+          </div>
+          <ul class="faq-question">
+            <li class="faq-question-col -hidden">
+              <div class="faq__question">
+                <div class="cell grid-x faq__question_wrap">
+                  <i class="icon"></i>
+                  <span class="question">What is bitcoin mining?</span>
+                </div>
+              </div>
+              <div class="cell small-12 faq__answer">
+                <p class="text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </li>
+            <li class="faq-question-col -hidden">
+              <div class="faq__question">
+                <div class="cell grid-x faq__question_wrap">
+                  <i class="icon"></i>
+                  <span class="question">Why do you need to mine btc?</span>
+                </div>
+              </div>
+              <div class="cell small-12 faq__answer">
+                <p class="text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </li>
+            <li class="faq-question-col -hidden">
+              <div class="faq__question">
+                <div class="cell grid-x faq__question_wrap">
+                  <i class="icon"></i>
+                  <span class="question">Is Bitcoin mining profitable?</span>
+                </div>
+              </div>
+              <div class="cell small-12 faq__answer">
+                <p class="text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </li>
+            <li class="faq-question-col -hidden">
+              <div class="faq__question">
+                <div class="cell grid-x faq__question_wrap">
+                  <i class="icon"></i>
+                  <span class="question">How to start mining bitcoins?</span>
+                </div>
+              </div>
+              <div class="cell small-12 faq__answer">
+                <p class="text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </li>
+            <li class="faq-question-col -hidden">
+              <div class="faq__question">
+                <div class="cell grid-x faq__question_wrap">
+                  <i class="icon"></i>
+                  <span class="question">What is a crypto mining platform?</span>
+                </div>
+              </div>
+              <div class="cell small-12 faq__answer">
+                <p class="text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end faq -->
+</main>

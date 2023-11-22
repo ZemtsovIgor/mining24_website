@@ -1,0 +1,38 @@
+{% set footerMenu = menus.footer.items %}
+{% macro renderHeaderMenuItems(entry) -%}
+  <li role="menuitem">
+    <a class="link" data-anchor="{{ entry.link }}" href="{{ entry.link }}">{{ entry.name }}</a>
+  </li>
+{%- endmacro %}
+{% macro renderSocialsMenuItems(entry) -%}
+  <div class="social-item">
+    <a class="social-item__link" target="_blank" href="{{ entry.link }}">
+      <i class="social-item__icon -{{ entry.slug }}"></i>
+    </a>
+  </div>
+{%- endmacro %}
+<div class="footer">
+  <div class="grid-container">
+    <div class="grid-x ">
+      <div class="cell small-12 medium-12 xlarge-3">
+        <div class="footer__logo text-center">
+          <a class="footer__logo-link" href="/">
+            <img class="img" src="/assets/images/logo.svg" alt="Mining24">
+          </a>
+        </div>
+      </div>
+      <div class="cell small-12 medium-12 xlarge-7">
+        <div class="footer-menu">
+          <ul class="footer-menu__list">
+            {%- for entry in footerMenu %}{{ renderHeaderMenuItems(entry) }}{%- endfor -%}
+          </ul>
+        </div>
+      </div>
+      <div class="cell small-12 medium-12 xlarge-2">
+        <div class="social footer-social">
+          {%- for entry in data.layout.socials %}{{ renderSocialsMenuItems(entry) }}{%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

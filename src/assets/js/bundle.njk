@@ -1,0 +1,10 @@
+---
+permalink: assets/js/bundle.js
+---
+{% set js %}
+  {% include "src/assets/js/_jquery.js" %}
+  {% include "src/assets/js/_rangeslider.js" %}
+  {% include "src/assets/js/_swiper.js" %}
+  {% include "src/assets/js/_application.js" %}
+{% endset %}
+{{ js | jsmin }}
