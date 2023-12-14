@@ -1,0 +1,139 @@
+---coffee
+data:
+  layout:
+    title: "ТЕСТ ЗАГОЛОВКА"
+    description: "ТЕСТ ОПИСАНИЯ"
+    keywords: "ТЕКСТ ПОИСКОВЫХ СЛОВ"
+    socialImage: "/assets/images/logo.svg"
+    languages:
+      slugs:
+        en: "Eng"
+        ru: "Рус"
+      list: [
+        {
+          symbol: "en",
+          name: "English",
+          path: "/"
+        },
+        {
+          symbol: "ru"
+          name: "Русский"
+          path: "/ru"
+        }
+      ]
+    socials: [
+      {
+        link: "#",
+        slug: "inst"
+      },
+      {
+        link: "#",
+        slug: "telegram"
+      },
+      {
+        link: "#",
+        slug: "twitter"
+      }
+    ]
+    translations:
+      header:
+        login: "Войти"
+        signUp: "Зарегистрироваться"
+    menus:
+      header:
+        items: [
+          {
+            link: "#contract",
+            name: "Контакты",
+            icon: false,
+            items: false
+          },
+          {
+            link: "#calculator",
+            name: "Калькулятор",
+            icon: false,
+            items: false
+          },
+          {
+            link: "#about_us",
+            name: "О нас",
+            icon: false,
+            items: false
+          },
+          {
+            link: "#faq",
+            name: "ЧЗВ",
+            icon: false,
+            items: false
+          }
+        ]
+      footer:
+        items: [
+          {
+            link: "#contract",
+            name: "Контакты",
+            icon: false,
+            items: false
+          },
+          {
+            link: "#calculator",
+            name: "Калькулятор",
+            icon: false,
+            items: false
+          },
+          {
+            link: "#about_us",
+            name: "О нас",
+            icon: false,
+            items: false
+          },
+          {
+            link: "#faq",
+            name: "ЧЗВ",
+            icon: false,
+            items: false
+          }
+        ]
+eleventyComputed:
+  title: (ctx) ->
+    data = ctx.data
+    title = data.page.title + ' | ' + data.layout.title
+    if ctx.layout == 'index'
+      title = data.layout.title + ' - ' + data.page.title
+    title
+  description: (ctx) ->
+    ctx.data.page.description or ctx.data.layout.description
+  keywords: (ctx) ->
+    ctx.data.page.keywords or ctx.data.layout.keywords
+  socialImage: (ctx) ->
+    ctx.data.page.socialImage or ctx.data.layout.socialImage
+  translations: (ctx) ->
+    ctx.data.page.translations or ctx.data.layout.translations
+  menus: (ctx) ->
+    ctx.data.page.menus or ctx.data.layout.menus
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+  <head>
+    {% include 'head/head.njk' %}
+  </head>
+  <body>
+    <div class="body">
+      <div
+        id="pageContent"
+        class="off-canvas-content has-transition-push has-position-right"
+      >
+        <header>
+          {% include 'header/header.njk' %}
+        </header>
+        {% include 'mobileMenu/mobileMenu.njk' %}
+        {{ content }}
+        <footer>
+          {% include 'footer/footer.njk' %}
+        </footer>
+      </div>
+    </div>
+    <script src="{{ 'bundle.js' | js_path }}" ></script>
+  </body>
+</html>

@@ -2,9 +2,9 @@
 permalink: assets/js/bundle.js
 ---
 {% set js %}
-  {% include "src/assets/js/_jquery.js" %}
-  {% include "src/assets/js/_rangeslider.js" %}
-  {% include "src/assets/js/_swiper.js" %}
-  {% include "src/assets/js/_application.js" %}
+  {% include "../../../node_modules/jquery/dist/jquery.js" %}
+  {% include "../../../node_modules/swiper/swiper-bundle.js" %}
+  {% include "./_rangeslider.js" %}
+  {% include "./_application.js" %}
 {% endset %}
 {{ js | jsmin }}

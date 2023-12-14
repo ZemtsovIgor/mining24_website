@@ -1,70 +1,10 @@
 ---
-layout: index
+layout: default_ru
 data:
   page:
     title: "ТЕСТ ЗАГОЛОВКА"
     description: "ТЕСТ ОПИСАНИЯ"
     keywords: "ТЕКСТ ПОИСКОВЫХ СЛОВ"
-    socialImage: "/assets/images/logo.svg"
-    translations:
-      header:
-        login: "Войти"
-        signUp: "Зарегистрироваться"
-    menus:
-      header:
-        items: [
-          {
-            link: "#contract",
-            name: "Контакты",
-            icon: false,
-            items: false
-          },
-          {
-            link: "#calculator",
-            name: "Калькулятор",
-            icon: false,
-            items: false
-          },
-          {
-            link: "#about_us",
-            name: "О нас",
-            icon: false,
-            items: false
-          },
-          {
-            link: "#faq",
-            name: "ЧЗВ",
-            icon: false,
-            items: false
-          }
-        ]
-      footer:
-        items: [
-          {
-            link: "#contract",
-            name: "Контакты",
-            icon: false,
-            items: false
-          },
-          {
-            link: "#calculator",
-            name: "Калькулятор",
-            icon: false,
-            items: false
-          },
-          {
-            link: "#about_us",
-            name: "О нас",
-            icon: false,
-            items: false
-          },
-          {
-            link: "#faq",
-            name: "ЧЗВ",
-            icon: false,
-            items: false
-          }
-        ]
 ---
 
 {% macro renderSocialItems(entry) -%}
@@ -283,38 +223,38 @@ data:
               <div class="swiper slides-list imageCarousel">
                 <div class="swiper-wrapper slides-track">
                   <div class="slide swiper-slide">
-                    <img class="carousel-image" src="/assets/images/slider/1.jpg" alt="alt text" />
+                    <img class="carousel-image" src={{ 'slider/1.jpg' | images_path }} alt="alt text" />
                   </div>
                   <div class="slide swiper-slide">
-                    <img class="carousel-image" src="/assets/images/slider/2.jpg" alt="alt text" />
+                    <img class="carousel-image" src={{ 'slider/2.jpg' | images_path }} alt="alt text" />
                   </div>
                   <div class="slide swiper-slide">
-                    <img class="carousel-image" src="/assets/images/slider/3.jpg" alt="alt text" />
+                    <img class="carousel-image" src={{ 'slider/3.jpg' | images_path }} alt="alt text" />
                   </div>
                   <div class="slide swiper-slide">
-                    <img class="carousel-image" src="/assets/images/slider/4.jpg" alt="alt text" />
+                    <img class="carousel-image" src={{ 'slider/4.jpg' | images_path }} alt="alt text" />
                   </div>
                   <div class="slide swiper-slide">
-                    <img class="carousel-image" src="/assets/images/slider/5.jpg" alt="alt text" />
+                    <img class="carousel-image" src={{ 'slider/5.jpg' | images_path }} alt="alt text" />
                   </div>
                 </div>
               </div>
               <div class="swiper carousel-thumbs thumbsCarousel">
                 <div class="swiper-wrapper">
                   <div class="carousel-thumb__wrap swiper-slide">
-                    <img class="carousel-thumb" src="/assets/images/slider/1.jpg" alt="alt text" />
+                    <img class="carousel-thumb" src={{ 'slider/1.jpg' | images_path }} alt="alt text" />
                   </div>
                   <div class="carousel-thumb__wrap swiper-slide">
-                    <img class="carousel-thumb" src="/assets/images/slider/2.jpg" alt="alt text" />
+                    <img class="carousel-thumb" src={{ 'slider/2.jpg' | images_path }} alt="alt text" />
                   </div>
                   <div class="carousel-thumb__wrap swiper-slide">
-                    <img class="carousel-thumb" src="/assets/images/slider/3.jpg" alt="alt text" />
+                    <img class="carousel-thumb" src={{ 'slider/3.jpg' | images_path }} alt="alt text" />
                   </div>
                   <div class="carousel-thumb__wrap swiper-slide">
-                    <img class="carousel-thumb" src="/assets/images/slider/4.jpg" alt="alt text" />
+                    <img class="carousel-thumb" src={{ 'slider/4.jpg' | images_path }} alt="alt text" />
                   </div>
                   <div class="carousel-thumb__wrap swiper-slide">
-                    <img class="carousel-thumb" src="/assets/images/slider/5.jpg" alt="alt text" />
+                    <img class="carousel-thumb" src={{ 'slider/5.jpg' | images_path }} alt="alt text" />
                   </div>
                 </div>
               </div>
@@ -361,19 +301,19 @@ data:
           <div class="partners-container">
             <div class="partners-wrap">
               <div class="partners-item">
-                <img class="partners-image" src="/assets/images/partners/antminer.svg" alt="alt text" />
+                <img class="partners-image" src={{ 'partners/antminer.svg' | images_path }} alt="alt text" />
               </div>
               <div class="partners-item">
-                <img class="partners-image" src="/assets/images/partners/bitmain.svg" alt="alt text" />
+                <img class="partners-image" src={{ 'partners/bitmain.svg' | images_path }} alt="alt text" />
               </div>
               <div class="partners-item">
-                <img class="partners-image" src="/assets/images/partners/binance.svg" alt="alt text" />
+                <img class="partners-image" src={{ 'partners/binance.svg' | images_path }} alt="alt text" />
               </div>
               <div class="partners-item">
-                <img class="partners-image" src="/assets/images/partners/emd.svg" alt="alt text" />
+                <img class="partners-image" src={{ 'partners/emd.svg' | images_path }} alt="alt text" />
               </div>
               <div class="partners-item">
-                <img class="partners-image" src="/assets/images/partners/f2pool.svg" alt="alt text" />
+                <img class="partners-image" src={{ 'partners/f2pool.svg' | images_path }} alt="alt text" />
               </div>
             </div>
           </div>
@@ -438,7 +378,7 @@ data:
             <div class="reviews-carousel__wrap swiper-slide -green">
               <div class="reviews-carousel__header">
                 <div class="reviews-carousel__photo">
-                  <img src="/assets/images/authors/1.png" class="img" alt="alt text" />
+                  <img src={{ 'authors/1.png' | images_path }} class="img" alt="alt text" />
                 </div>
                 <div class="reviews-carousel__info">
                   <div class="reviews-carousel__info_name">
@@ -480,7 +420,7 @@ data:
             <div class="reviews-carousel__wrap swiper-slide -purple">
               <div class="reviews-carousel__header">
                 <div class="reviews-carousel__photo">
-                  <img src="/assets/images/authors/2.png" class="img" alt="alt text" />
+                  <img src={{ 'authors/2.png' | images_path }} class="img" alt="alt text" />
                 </div>
                 <div class="reviews-carousel__info">
                   <div class="reviews-carousel__info_name">
@@ -520,7 +460,7 @@ data:
             <div class="reviews-carousel__wrap swiper-slide -blue">
               <div class="reviews-carousel__header">
                 <div class="reviews-carousel__photo">
-                  <img src="/assets/images/authors/3.png" class="img" alt="alt text" />
+                  <img src={{ 'authors/3.png' | images_path }} class="img" alt="alt text" />
                 </div>
                 <div class="reviews-carousel__info">
                   <div class="reviews-carousel__info_name">
@@ -562,7 +502,7 @@ data:
             <div class="reviews-carousel__wrap swiper-slide -pink">
               <div class="reviews-carousel__header">
                 <div class="reviews-carousel__photo">
-                  <img src="/assets/images/authors/3.png" class="img" alt="alt text" />
+                  <img src={{ 'authors/3.png' | images_path }} class="img" alt="alt text" />
                 </div>
                 <div class="reviews-carousel__info">
                   <div class="reviews-carousel__info_name">
