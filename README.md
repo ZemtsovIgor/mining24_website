@@ -1,6 +1,20 @@
-# Run
+# Getting Started with Create Website Static
 
-```
-rm -rf build && npx @11ty/eleventy --serve --incremental --port 8888
-```
+This project was bootstrapped with [Create Website Static](https://github.com/oomag/11ty).
 
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm run start`
+
+Runs the app in the development mode.\
+Open [http://localhost:8888](http://localhost:8888) to view it in the browser.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
